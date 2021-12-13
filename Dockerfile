@@ -90,7 +90,7 @@ ARG STABILITY="stable"
 ENV STABILITY ${STABILITY}
 
 # Allow to select skeleton version
-ARG SYMFONY_VERSION=""
+ARG SYMFONY_VERSION="5.4.*"
 ENV SYMFONY_VERSION ${SYMFONY_VERSION}
 
 # Download the Symfony skeleton and leverage Docker cache layers
