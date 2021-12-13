@@ -28,7 +28,7 @@ class Article
     private $description;
 
     /**
-     * @ORM\Column(type="datetime_immutable")
+     * @ORM\Column(type="datetime")
      */
     private $publishedAt;
 
@@ -36,6 +36,12 @@ class Article
      * @ORM\Column(type="boolean")
      */
     private $status;
+
+    public function __construct()
+    {
+        $this->status = false;
+        $this->publishedAt = new \DateTime();
+    }
 
     public function getId(): ?int
     {
