@@ -19,12 +19,18 @@ class ArticleMutaion implements MutationInterface, AliasedInterface
 
     public function resolve(Argument $args)
     {
-        $artist = (new Article())->setTitle($args['title'])->setDescription($args['description']);
+        $article = new Article();
+        $article
+            ->setTitle($args['title'])
+            ->setDescription($args['description'])
+            ->setDescription($args['status'])
+            ->setDescription($args['publishedAt'])
+        ;
 
-        $this->em->persist($artist);
+        $this->em->persist($article);
         $this->em->flush();
 
-        return ['content' => $artist];
+        return ['content' => $article];
     }
 
     /**

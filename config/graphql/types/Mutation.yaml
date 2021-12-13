@@ -10,6 +10,10 @@ Mutation:
                         type: String!
                     description:
                         type: String!
+                    status:
+                        type: Boolean
+                    publishedAt:
+                        type: String
 
 ArticlePayLoad:
     type: object
