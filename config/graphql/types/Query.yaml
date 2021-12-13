@@ -1,0 +1,14 @@
+Query:
+    type: object
+    config:
+        fields:
+            Article:
+                type: 'Article'
+                args:
+                    id:
+                        description: 'Resolves Article using its id.'
+                        type: 'Int!'
+                resolve: "@=resolver('Article', [args['id']])"
+            Articles:
+                type: '[Article]'
+                resolve: "@=resolver('Articles')"

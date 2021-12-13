@@ -1,0 +1,19 @@
+Mutation:
+    type: object
+    config:
+        fields:
+            createArticle:
+                type: ArticlePayLoad
+                resolve: "@=mutation('createArticle', [args])"
+                args:
+                    title:
+                        type: String!
+                    description:
+                        type: String!
+
+ArticlePayLoad:
+    type: object
+    config:
+        fields:
+            content:
+                type: Article!
