@@ -26,7 +26,6 @@ ArticleOrderBy:
                           choices: ["ASC", "DESC"]
             publishedAt:
                 type: 'String'
-
                 validation:
                     - Choice:
                           choices: ["ASC", "DESC"]

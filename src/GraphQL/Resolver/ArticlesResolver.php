@@ -47,7 +47,15 @@ class ArticlesResolver implements ResolverInterface, AliasedInterface
             $qb->andWhere('a.publishedAt = :publishedAt')->setParameter('publishedAt', $args['publishedAt']);
         }
 
-        if (!empty($args['status'])){
+        if (!empty($args['publishedAtMin'])){
+            $qb->andWhere('a.publishedAt >= :publishedAtMin')->setParameter('publishedAtMin', $args['publishedAtMin']);
+        }
+
+        if (!empty($args['publishedAtMax'])){
+            $qb->andWhere('a.publishedAt <= :publishedAtMax')->setParameter('publishedAtMax', $args['publishedAtMax']);
+        }
+
+        if ($args->offsetExists('status')){
             $qb->andWhere('a.status = :status')->setParameter('status', $args['status']);
         }
 

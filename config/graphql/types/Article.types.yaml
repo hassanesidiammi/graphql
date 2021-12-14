@@ -9,6 +9,14 @@ Article:
             description:
                 type: 'String!'
             publishedAt:
-                type: 'String!'
+                type: 'DateTime!'
             status:
                 type: 'Boolean!'
+
+DateTime:
+    type: custom-scalar
+    config:
+        serialize: ["App\\GraphQL\\Types\\DateTimeType", "serialize"]
+        parseValue: ["App\\GraphQL\\Types\\DateTimeType", "parseValue"]
+        parseLiteral: ["App\\GraphQL\\Types\\DateTimeType", "parseLiteral"]
+

@@ -21,7 +21,11 @@ Query:
                     status:
                         type: 'Boolean'
                     publishedAt:
-                        type: 'String'
+                        type: 'DateTime'
+                    publishedAtMin:
+                        type: 'DateTime'
+                    publishedAtMax:
+                        type: 'DateTime'
                     
                     orderBy:
                         type: 'ArticleOrderBy'
