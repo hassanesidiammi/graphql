@@ -22,4 +22,9 @@ Query:
                         type: 'Boolean'
                     publishedAt:
                         type: 'String'
+                    
+                    orderBy:
+                        type: 'ArticleOrderBy'
+                        validation: cascade
+
                 resolve: "@=resolver('Articles', [args])"

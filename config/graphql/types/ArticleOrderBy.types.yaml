@@ -1,0 +1,32 @@
+ArticleOrderBy:
+    type: input-object
+    config:
+        description: "Order by results by fields"
+        fields:
+            id:
+                type: 'String'
+                validation:
+                    - Choice:
+                        choices: ["ASC", "DESC"]
+            title:
+                type: 'String'
+                validation:
+                    -   Choice:
+                            choices: ["ASC", "DESC"]
+                            message: "Order by value shod be 'ASC' OR 'DESC'"
+            description:
+                type: 'String'
+                validation:
+                    - Choice:
+                          choices: ["ASC", "DESC"]
+            status:
+                type: 'String'
+                validation:
+                    - Choice:
+                          choices: ["ASC", "DESC"]
+            publishedAt:
+                type: 'String'
+
+                validation:
+                    - Choice:
+                          choices: ["ASC", "DESC"]

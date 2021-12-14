@@ -51,6 +51,12 @@ class ArticlesResolver implements ResolverInterface, AliasedInterface
             $qb->andWhere('a.status = :status')->setParameter('status', $args['status']);
         }
 
+        if (!empty($args['orderBy'])){
+            foreach ($args['orderBy'] as $sort => $order) {
+                $qb->addOrderBy('a.'.$sort, $order);
+            }
+        }
+
         return $qb->getQuery()->getArrayResult();
     }
 
